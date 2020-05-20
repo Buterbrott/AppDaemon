@@ -45,6 +45,7 @@ class Dashboard:
         self.fa4compatibility = False
         self.transport = "ws"
         self.title = "HADashboard"
+        self.ws_proxy_url = ""
         #
         # Process any overrides
         #
@@ -67,6 +68,7 @@ class Dashboard:
         self._process_arg("fa4compatibility", kwargs)
         self._process_arg("transport", kwargs)
         self._process_arg("title", kwargs)
+        self._process_arg("ws_proxy_url", kwargs)
         #
         # Create some dirs
         #
@@ -787,6 +789,7 @@ class Dashboard:
         params["name"] = name.lower()
         params["skin"] = skin
         params["transport"] = self.transport
+        params["ws_proxy_url"] = self.ws_proxy_url
 
         #
         # Build dash specific code

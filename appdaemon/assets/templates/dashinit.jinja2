@@ -97,7 +97,11 @@ $(function(){ //DOM Ready
     {
         wsprot = "ws:"
     }
+    {% if ws_proxy_url %}
+    var stream_url = ws_proxy_url
+    {% else %}
     var stream_url = wsprot + '//' + location.host + '/stream'
+    {% endif %}
     {% else %}
         var stream_url = 'http://' + document.domain + ':' + location.port + "/stream"
     {% endif %}

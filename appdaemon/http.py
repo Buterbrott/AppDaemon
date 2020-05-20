@@ -219,6 +219,9 @@ class HTTP:
                 self.fa4compatibility = False
                 self._process_arg("fa4compatibility", dashboard)
 
+                self.ws_proxy_url = ""
+                self._process_arg("ws_proxy_url", dashboard)
+
                 if "rss_feeds" in dashboard:
                     self.rss_feeds = []
                     for feed in dashboard["rss_feeds"]:
@@ -267,7 +270,8 @@ class HTTP:
                                                            css_dir=self.css_dir,
                                                            fonts_dir=self.fonts_dir,
                                                            webfonts_dir=self.webfonts_dir,
-                                                           images_dir=self.images_dir)
+                                                           images_dir=self.images_dir,
+                                                           ws_proxy_url=self.ws_proxy_url)
                 self.setup_dashboard_routes()
 
             else:
