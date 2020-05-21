@@ -19,7 +19,8 @@ function ha_status(stream, dash, widgets, transport)
 
     if (transport === "ws")
     {
-        var webSocket = new ReconnectingWebSocket(stream);
+        //var webSocket = new ReconnectingWebSocket(stream);
+        var webSocket = new WebSocket(stream);
 
         webSocket.onopen = function (event)
         {
